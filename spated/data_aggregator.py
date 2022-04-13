@@ -97,7 +97,7 @@ class DataAggregator():
     def add_events_data(
         self,
         events_data: pd.DataFrame,
-        datetime_col: str = None,
+        datetime_col: str = 'ts',
         lat_col: str = 'lat',
         lon_col: str = 'lon',
         feature_cols: List[str] = [],
@@ -352,7 +352,7 @@ class DataAggregator():
         ).drop('index_right', axis=1)\
             .rename({'id': 'gdiscr'}, axis=1)
 
-    def add_geo_variable(self, data: gpd.GeoDataFrame):
+    def add_geo_features(self, data: gpd.GeoDataFrame):
         '''
         Merge information from external geographical data with computed
         geographical discretization.
