@@ -1,6 +1,6 @@
 # spated
 
-Spatio-temporal data wrangling and analysis. If you have data from events with geographical and temporal features and want to create analytical datasets aggregating this information with other sources, `spated` can help you.
+Spatio-Temporal Discretizator for spatio-Temporal data wrangling and analysis. If you have data from events with geographical and temporal information and want to create analytical datasets aggregating this information with other sources, `spated` can help you.
 
 ## Instalation
 
@@ -16,7 +16,7 @@ import spated
 app = spated.DataAggregator()
 
 # add your events dataset
-# for example, a dataset with ambulance calls register
+# for example, a dataset with ambulance calls registers
 app.add_events(ambulance_calls_df)
 
 # add a base geographical limit as a geopandas.GeoDataFrame to locate the analysis
@@ -37,4 +37,4 @@ app.add_geo_discretization(discr_type='R', rect_discr_param_x=15, rect_discr_par
 app.add_geo_features(neighborhoods_population)
 ```
 
-For more details, check `usage_example.ipynb` notebook.
+For more details and options, check `usage_example.ipynb` notebook.
