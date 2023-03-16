@@ -56,7 +56,7 @@ def generate_H3_discretization(gdf: GeoDataFrame, resolution: int = 7):
     hex_indexes = set()
     for observation in h3_gdf.geometry:
         if observation.geom_type == "MultiPolygon":
-            for polygon in observation:
+            for polygon in observation.geoms:
                 geoJson = polygon_to_geojson(polygon)
                 # h3.polyfill is the important method in the H3 library
                 # that does the heavy work of finding a good hex-cover
